@@ -76,7 +76,7 @@ function handleFormSubmission(event) {
         // Redirect to the correct website if password is correct
         var win = window.open();
         var url = "https://sumensite.global.ssl.fastly.net/";
-        win.document.write(
+        win.document.write(`
           <html>
             <head>
               <style>
@@ -97,11 +97,11 @@ function handleFormSubmission(event) {
               <iframe src="${url}"></iframe>
             </body>
           </html>
-        );
+        `);
         win.document.close();
     } else {
         // Redirect to a different website if password is incorrect
-        window.open(https://google--classroom.global.ssl.fastly.net, '_blank').focus();
+        window.location.href = 'https://classroom.google.com'; // Replace with the fallback URL
     }
 }
 
