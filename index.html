@@ -101,7 +101,8 @@ function handleFormSubmission(event) {
         win.document.close();
     } else {
         // Redirect to a different website if password is incorrect
-        window.location.href = 'https://classroom.google.com'; // Replace with the fallback URL
+        window.open("https://classroom.google.com", "_self");
+
     }
 }
 
