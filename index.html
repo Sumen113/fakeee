@@ -73,32 +73,43 @@ function handleFormSubmission(event) {
     const correctPassword = 'nositehere'; // Replace with the correct password
 
     if (password === correctPassword) {
-        // Redirect to the correct website if password is correct
-        var win = window.open();
-        var url = "https://sumensite.global.ssl.fastly.net/";
-        win.document.write(`
-          <html>
-            <head>
-              <style>
-                html, body {
-                  margin: 0;
-                  padding: 0;
-                  overflow: hidden;
-                  height: 100%;
-                }
-                iframe {
-                  width: 100vw;
-                  height: 100vh;
-                  border: none;
-                }
-              </style>
-            </head>
-            <body>
-              <iframe src="${url}"></iframe>
-            </body>
-          </html>
-        `);
-        win.document.close();
+        let html = `
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>example</title>
+    <link rel="icon" href="https://github.githubassets.com/favicons/favicon.svg" type="image/svg+xml">
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe src="https://sumensite.global.ssl.fastly.net/" 
+            style="width:100%; height:100%; border:none;"></iframe>
+  </body>
+</html>`;
+
+// Create a Blob with the HTML content
+let blob = new Blob([html], { type: 'text/html' });
+
+// Create a URL for the Blob
+let blobUrl = URL.createObjectURL(blob);
+
+// Open a blank window first
+let win = window.open('about:blank', '_blank', 'noopener,noreferrer');
+
+// After the window loads, navigate it to the blob URL
+if (win) {
+    win.location.href = blobUrl;
+} else {
+    alert('Popup blocked! Please allow popups for this site.');
+}
+
+
     } else {
         // Redirect to a different website if password is incorrect
         window.open("https://classroom.google.com");
