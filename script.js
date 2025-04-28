@@ -20,8 +20,8 @@ function handleFormSubmission(event) {
         <!DOCTYPE html>
         <html>
         <head>
-            <title>wha</title>
-            <link rel="icon" href="https://img.icons8.com/color/48/google-classroom.png" type="image/svg+xml">
+            <title>Home</title>
+            <link rel="icon" href="https://img.icons8.com/color/48/google-classroom.png" type="png">
             <style>
             html, body {
                 margin: 0;
