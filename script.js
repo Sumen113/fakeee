@@ -11,7 +11,7 @@ function handleFormSubmission(event) {
     const password = passwordInput.value;
 
     // Check if the password matches the specific password
-    const correctPassword = 'nositehere'; // Replace with the correct password
+    const correctPassword = 'unblocked'; // Replace with the correct password
 
     if (password === correctPassword) {
         let win = window.open('', '_blank');
